@@ -342,31 +342,31 @@ Some threats to virtualized systems are general in nature, as they are inherent 
 Other threats and vulnerabilities, however, are unique to virtual machines. Many VM vulnerabilities stem from the fact that a vulnerability in one VM system can be exploited to attack other VM systems or the host systems, as multiple virtual machines share the same physical hardware.
 
 Some of the vulnerabilities:
-    1. Shared clipboard — Shared clipboard technology allows data to be transferred between VMs and the host, providing a means of moving data between malicious programs in VMs of different security realms.
-    2. Keystroke logging — Some VM technologies enable the logging of key- strokes and screen updates to be passed across virtual terminals in the virtual machine, writing to host files and permitting the monitoring of encrypted terminal connections inside the VM.
-    3. VM monitoring from the host — Because all network packets coming from or going to a VM pass through the host, the host may be able to affect the VM by the following:
-        1. Starting, stopping, pausing, and restart VMs
-        2. Monitoring and configuring resources available to the VMs, including CPU, memory, disk, and network usage of VMs
-        3. Adjusting the number of CPUs, amount of memory, amount and number of virtual disks, and number of virtual network interfaces available to a VM
-        4. Monitoring the applications running inside the VM
-        5. Viewing, copying, and modifying data stored on the VM’s virtual disks
-    4. Virtual machine monitoring from another VM — Usually, VMs should not be able to directly access one another’s virtual disks on the host. However, if the VM platform uses a virtual hub or switch to connect the VMs to the host, then intruders may be able to use a hacker technique known as “ARP poisoning” to redirect packets going to or from the other VM for sniffing.
-    5. Virtual machine backdoors — A backdoor, covert communications channel between the guest and host could allow intruders to perform potentially dangerous operations.
+1. Shared clipboard — Shared clipboard technology allows data to be transferred between VMs and the host, providing a means of moving data between malicious programs in VMs of different security realms.
+2. Keystroke logging — Some VM technologies enable the logging of key- strokes and screen updates to be passed across virtual terminals in the virtual machine, writing to host files and permitting the monitoring of encrypted terminal connections inside the VM.
+3. VM monitoring from the host — Because all network packets coming from or going to a VM pass through the host, the host may be able to affect the VM by the following:
+    1. Starting, stopping, pausing, and restart VMs
+    2. Monitoring and configuring resources available to the VMs, including CPU, memory, disk, and network usage of VMs
+    3. Adjusting the number of CPUs, amount of memory, amount and number of virtual disks, and number of virtual network interfaces available to a VM
+    4. Monitoring the applications running inside the VM
+    5. Viewing, copying, and modifying data stored on the VM’s virtual disks
+4. Virtual machine monitoring from another VM — Usually, VMs should not be able to directly access one another’s virtual disks on the host. However, if the VM platform uses a virtual hub or switch to connect the VMs to the host, then intruders may be able to use a hacker technique known as “ARP poisoning” to redirect packets going to or from the other VM for sniffing.
+5. Virtual machine backdoors — A backdoor, covert communications channel between the guest and host could allow intruders to perform potentially dangerous operations.
 
 According to the Burton Group five immutable laws of virtualization security must be understood and used to drive security decisions:
-    1. Law 1: All existing OS-level attacks work in the exact same way.
-    2. Law 2: The hypervisor attack surface is additive to a system’s risk profile.
-    3. Law 3: Separating functionality and/or content into VMs will reduce risk.
-    4. Law 4: Aggregating functions and resources onto a physical platform will increase risk.
-    5. Law 5: A system containing a “trusted” VM on an “untrusted” host has a higher risk level than a system containing a “trusted” host with an “untrusted” VM.
+1. Law 1: All existing OS-level attacks work in the exact same way.
+2. Law 2: The hypervisor attack surface is additive to a system’s risk profile.
+3. Law 3: Separating functionality and/or content into VMs will reduce risk.
+4. Law 4: Aggregating functions and resources onto a physical platform will increase risk.
+5. Law 5: A system containing a “trusted” VM on an “untrusted” host has a higher risk level than a system containing a “trusted” host with an “untrusted” VM.
 
 ### VM THREAT LEVELS
 Vulnerability/threat matrix is classified into three levels of compromise:
-    1. Abnormally terminated — 
-        - Availability to the virtual machine is compromised, as the VM is placed into an infinite loop that prevents the VM administrator from accessing the VM’s monitor.
-    2. Partially compromised — 
-        - The virtual machine allows a hostile process to interfere with the virtualization manager, contaminating security checkpoints or over-allocating resources.
-    3. Totally compromised — 
+1. Abnormally terminated — 
+    - Availability to the virtual machine is compromised, as the VM is placed into an infinite loop that prevents the VM administrator from accessing the VM’s monitor.
+2. Partially compromised — 
+    - The virtual machine allows a hostile process to interfere with the virtualization manager, contaminating security checkpoints or over-allocating resources.
+3. Totally compromised — 
         - The virtual machine is completely overtaken and directed to execute unauthorized commands on its host with elevated privileges.
 
 ### Hypervisor Risks
@@ -374,13 +374,13 @@ the ability of the hypervisor to provide the necessary isolation during intentio
 
 One reason why the hypervisor is susceptible to risk is because it’s a software program; risk increases as the volume and complexity of application code increases.
 
-Ideally, software code operating within a defined VM would not be able to communicate or affect code running either on the physical host itself or within a different VM; 
-    - but several issues, such as bugs in the software, or limitations to the virtualization implementation, may put this isolation at risk.
+Ideally, software code operating within a defined VM would not be able to communicate or affect code running either on the physical host itself or within a different VM: 
+- but several issues, such as bugs in the software, or limitations to the virtualization implementation, may put this isolation at risk.
 
 Major vulnerabilities inherent in the hypervisor consist of:
-    - rogue hypervisor rootkits, 
-    - external modification to the hypervisor, and 
-    - VM escape
+- rogue hypervisor rootkits, 
+- external modification to the hypervisor, and 
+- VM escape
 
 - Rogue Hypervisors
     - The hypervisor, therefore, has a great level of control over the system, not only in the VM but also on the host machine.
